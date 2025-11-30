@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Concessionária VIP</title>
 </head>
 <body>
 
     <header>
-        <img src="./img/logo-removebg-preview.png" alt="logo VIP">
-        <nav>
+        <img src="img/logo_branco.png" alt="Logotipo Concessionária VIP">
+        <nav role="navigation" aria-label="Menu principal">
             <ul>
-                <li>Home</li>
-                <li>Carros</li>
-                <li>Fale Conosco</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Carros</a></li>
+                <li><a href="#">Fale Conosco</a></li>
             </ul>
         </nav>
     </header>
 
+    <main>
     <section>
         <div class="list">
             <div class="item">
                 <div class="car-img">
-                    <img src="./img/ferrari.png" alt="Carro Porshe">                 
+                    <img src="./img/ferrari.png" alt="Ferrari — imagem do veículo">                 
                 </div>
                 <div class="content">
                     <p class="car-information">
@@ -34,7 +36,7 @@
                     <p class="description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit consequuntur soluta eaque tenetur, cupiditate molestias nobis amet dolor quasi ullam porro nisi. Modi, architecto neque vitae quam iste porro quas.
                     </p>
-                    <button>
+                    <button class="button">
                         Saiba mais
                     </button>
                 </div>
@@ -42,21 +44,20 @@
         </div>
 
         <div class="arrows">
-            <button><img src="./img/arrow.png" alt="seta esquerda"></button>
-            <button><img src="./img/arrow.png" alt="seta direita"></button>
+            <button type="button"><img src="./img/arrow.png" alt="seta esquerda"></button>
+            <button type="button"><img src="./img/arrow.png" alt="seta direita"></button>
         </div>
 
         <div class="indicators">
             <div class="number">01</div>
-            <ul>
-                <li class="active"></li>
-                <li></li>
-                <li></li>
+            <ul aria-label="Indicadores de slides">
+                <li class="active" aria-label="Slide 1"></li>
+                <li aria-label="Slide 2"></li>
+                <li aria-label="Slide 3"></li>
             </ul>
-
         </div>
     </section>
-    
+    </main>
     
 </body>
 </html>
