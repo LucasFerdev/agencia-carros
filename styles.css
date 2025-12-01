@@ -43,7 +43,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    font-size: 20px;
+    font-size: 2em;
     color: #ffffff;
     text-decoration: none;
     padding: 8px 12px;
@@ -94,7 +94,6 @@ section .list .item .content {
 
 section .list .item .content .car-information {
     font-weight: bold;
-
 }
 
 section .list .item .content h2 {
@@ -107,7 +106,6 @@ section .list .item .content .description {
     font-size: 12px;
     text-align: right;
     max-width: 400px;
-
 }
 
 section .list .item .content .button {
@@ -119,7 +117,6 @@ section .list .item .content .button {
     background-color: #beff1b;
     color: #000000;
     cursor: pointer;
-
 }
 
 section .list .item .content p {
@@ -129,26 +126,39 @@ section .list .item .content p {
 .arrows {
     position: absolute;
     top: 50%;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 100%; 
+    max-width: 60%;     
     display: flex;
     justify-content: space-between;
     align-items: center;
-    pointer-events: none; /* permite clicar apenas nos botões */
-    z-index: 2;
+    pointer-events: none; 
+    z-index: 10; 
 }
 
 .arrows button {
-    background: transparent;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     border: none;
     cursor: pointer;
-    pointer-events: auto;
+    pointer-events: auto; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    transition: 0.3s;
+}
+
+.arrows button:hover {
+    background-color: #beff1b; 
 }
 
 .arrows button img {
-    width: 48px;
-    height: auto;
-    display: block;
+    width: 25px;
+    margin-top: 4px; 
+}
+
+.arrows button:first-child img {
+    transform: scaleX(-1);
 }
 
 section .indicators {
