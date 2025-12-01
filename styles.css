@@ -26,12 +26,14 @@ header {
 }
 
 header img {
-    width: 250px;
+    width: clamp(150px, 20vw, 250px);
+    height: auto;
+    display: block;
 }
 
 header nav ul {
     display: flex;
-    gap: 24px;
+    gap: clamp(20px, 5vw, 60px); 
     list-style: none;
     align-items: center;
     justify-content: flex-end;
@@ -44,10 +46,10 @@ header nav ul li {
 }
 
 header nav ul li a {
-    font-size: 2em;
+    font-size: 1.5em;
     color: #ffffff;
     text-decoration: none;
-    padding: 8px 12px;
+    padding: 8px 20px;
     display: inline-block;
 }
 
@@ -71,7 +73,7 @@ section .list .item {
 
 section .list .item .car-img {
     position: absolute;
-    margin-top: 35%;
+    margin-top: 32%;
     transform: translateY(-50%);
     width: 70%;
 }
