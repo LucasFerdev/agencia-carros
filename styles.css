@@ -54,7 +54,7 @@ header nav ul li a {
 }
 
 section {
-    background-image: radial-gradient(#7f3d9e, #6d00d9);
+    background-image: radial-gradient(#fc120a, #970202);
     height: 100vh;
     position: relative;
 }
@@ -214,4 +214,42 @@ section .indicators ul li {
 section .indicators ul li.active {
     width: 80px;
     background-color: #ffffff;
+}
+
+section {
+
+    & .item {
+        transform: translateX(100vw);
+        transition: 0.5;
+
+        & .car-img {
+            & img {
+                transform: rotate(0);
+                transition: 0.5s;
+                transition-delay: 0.3d;
+            }
+        }
+
+        & .content {
+
+            & .car-information, h2, .description, .button {
+                transform: translateX(200px);
+                transition: 0.7s;
+                transition-delay: 0.3s;
+            }
+
+            & h2 {
+                transition-delay: 0.5s;
+            }
+
+            & .description {
+                transition-delay: 0.7s;
+            }
+
+            & .button {
+                transition-delay: 0.9s;
+            }
+
+        }
+    }
 }
