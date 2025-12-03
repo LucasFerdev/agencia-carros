@@ -33,7 +33,7 @@ header img {
 
 header nav ul {
     display: flex;
-    gap: clamp(20px, 5vw, 60px); 
+    gap: clamp(20px, 5vw, 60px);
     list-style: none;
     align-items: center;
     justify-content: flex-end;
@@ -221,6 +221,7 @@ section {
     & .item {
         transform: translateX(100vw);
         transition: 0.5;
+        opacity: 0;
 
         & .car-img {
             & img {
@@ -232,10 +233,14 @@ section {
 
         & .content {
 
-            & .car-information, h2, .description, .button {
+            & .car-information,
+            h2,
+            .description,
+            .button {
                 transform: translateX(200px);
                 transition: 0.7s;
                 transition-delay: 0.3s;
+                opacity: 0;
             }
 
             & h2 {
@@ -252,4 +257,31 @@ section {
 
         }
     }
+
+    & .item.active {
+        transform: translateX(0);
+        transition: 0.5;
+        opacity: 1;
+
+        & .car-img {
+            & img {
+                transform: rotate(-25deg);
+
+            }
+        }
+
+        & .content {
+
+            & .car-information,
+            h2,
+            .description,
+            .button {
+                transform: translateX(0);
+                opacity: 1;
+
+            }
+
+        }
+    }
+
 }
