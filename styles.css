@@ -54,7 +54,7 @@ header nav ul li a {
 }
 
 section {
-    background-image: radial-gradient(#fc120a, #970202);
+    background-image: radial-gradient(#554d4d, #181111);
     height: 100vh;
     position: relative;
 }
@@ -216,72 +216,73 @@ section .indicators ul li.active {
     background-color: #ffffff;
 }
 
-section {
+section .list .item {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
 
-    & .item {
-        transform: translateX(100vw);
-        transition: 0.5;
-        opacity: 0;
+section .list .item.active {
+    visibility: visible;
+    opacity: 1;
+}
 
-        & .car-img {
-            & img {
-                transform: rotate(0);
-                transition: 0.5s;
-                transition-delay: 0.3d;
-            }
-        }
+section .list .item .car-img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
 
-        & .content {
+section .list .item.active .car-img {
+    opacity: 1;
+}
 
-            & .car-information,
-            h2,
-            .description,
-            .button {
-                transform: translateX(200px);
-                transition: 0.7s;
-                transition-delay: 0.3s;
-                opacity: 0;
-            }
+section .list .item .car-img img {
+    transform: translateX(100vw) rotate(0deg);
+    transition: transform 0.5s ease;
+}
 
-            & h2 {
-                transition-delay: 0.5s;
-            }
+section .list .item.active .car-img img {
+    transform: translateX(0) rotate(0deg);
+    animation: slideAndRotate 0.7s ease forwards;
+}
 
-            & .description {
-                transition-delay: 0.7s;
-            }
-
-            & .button {
-                transition-delay: 0.9s;
-            }
-
-        }
+@keyframes slideAndRotate {
+    0% {
+        transform: translateX(100vw) rotate(0deg);
     }
-
-    & .item.active {
-        transform: translateX(0);
-        transition: 0.5;
-        opacity: 1;
-
-        & .car-img {
-            & img {
-                transform: rotate(-25deg);
-
-            }
-        }
-
-        & .content {
-
-            & .car-information,
-            h2,
-            .description,
-            .button {
-                transform: translateX(0);
-                opacity: 1;
-
-            }
-
-        }
+    
+    70% {
+        transform: translateX(0) rotate(0deg);
     }
+    
+    100% {
+        transform: translateX(0) rotate(-25deg);
+    }
+}
 
+section .list .item .content .car-information,
+section .list .item .content h2,
+section .list .item .content .description,
+section .list .item .content .button {
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+
+section .list .item .content h2 {
+    transition-delay: 0.5s;
+}
+
+section .list .item .content .description {
+    transition-delay: 0.7s;
+}
+
+section .list .item .content .button {
+    transition-delay: 0.9s;
+}
+
+section .list .item.active .content .car-information,
+section .list .item.active .content h2,
+section .list .item.active .content .description,
+section .list .item.active .content .button {
+    opacity: 1;
 }

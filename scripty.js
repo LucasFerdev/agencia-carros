@@ -1,27 +1,35 @@
-const { act } = require("react");
+let prevButton = document.querySelector('.arrows button:first-child');
+let nextButton = document.querySelector('.arrows button:last-child');
+let items = document.querySelectorAll('section .list .item');
+let dots = document.querySelectorAll('section .indicators ul li');
+let numberDisplay = document.querySelector('section .indicators .number');
 
-let preButton = document.getElementById('prev');
-let nextButton = document.getElementById('next');
-let container = document.querySelector('.container');
-let items = document.querySelectorAll('.list .item');
-let indixator = document.querySelectorAll('.indicators button');
-let dots = indicator.querySelectorAll('ul li');
+let active = 0;
+let lastPosition = items.length - 1;
 
+function updateCarousel() {
+  items.forEach((item, index) => {
+    item.classList.toggle('active', index === active);
+  });
 
-let active = 0
-let fistPosition = 0
-let lastPosition = items.length - 1
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === active);
+  });
+
+  const displayNumber = String(active + 1).padStart(2, '0');
+  if (numberDisplay) {
+    numberDisplay.textContent = displayNumber;
+  }
+}
 
 nextButton.onclick = () => {
-   let itemOld = container.querySelector('.list .item.active')
-   itemOld.classList.remove('active')
+  active = active + 1 > lastPosition ? 0 : active + 1;
+  updateCarousel();
+};
 
-   active = active + 1 > lastPosition ? 0 : active + 1
-   items[active].classList.add('active')
-}
+prevButton.onclick = () => {
+  active = active - 1 < 0 ? lastPosition : active - 1;
+  updateCarousel();
+};
 
-
-
-preButton.onclick = () => {
-    console.log('Botão prev')
-}
+updateCarousel();
