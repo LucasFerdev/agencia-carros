@@ -1,3 +1,5 @@
+const { act } = require("react");
+
 let preButton = document.getElementById('prev');
 let nextButton = document.getElementById('next');
 let container = document.querySelector('.container');
@@ -5,10 +7,21 @@ let items = document.querySelectorAll('.list .item');
 let indixator = document.querySelectorAll('.indicators button');
 let dots = indicator.querySelectorAll('ul li');
 
+
+let active = 0
+let fistPosition = 0
+let lastPosition = items.length - 1
+
 nextButton.onclick = () => {
-    console.log('Botão next');
+   let itemOld = container.querySelector('.list .item.active')
+   itemOld.classList.remove('active')
+
+   active = active + 1 > lastPosition ? 0 : active + 1
+   items[active].classList.add('active')
 }
 
-preButton.onclick = () => {
 
+
+preButton.onclick = () => {
+    console.log('Botão prev')
 }
