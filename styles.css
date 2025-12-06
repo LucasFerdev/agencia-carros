@@ -26,7 +26,7 @@ header {
 }
 
 header img {
-    width: clamp(150px, 20vw, 250px);
+    width: clamp(150px, 20vw, 170px);
     height: auto;
     display: block;
 }
@@ -85,7 +85,7 @@ section .list .item .car-img img {
 
 section .list .item .content {
     position: absolute;
-    right: 100px;
+    right: 50px;
     width: 70%;
     height: 100%;
     display: flex;
@@ -243,7 +243,7 @@ section .list .item .car-img img {
 
 section .list .item.active .car-img img {
     transform: translateX(0) rotate(0deg);
-    animation: slideAndRotate 0.7s ease forwards;
+    animation: slideAndRotate 0.4s ease forwards;
 }
 
 @keyframes slideAndRotate {

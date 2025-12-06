@@ -4,6 +4,7 @@ let items = document.querySelectorAll('section .list .item');
 let dots = document.querySelectorAll('section .indicators ul li');
 let numberDisplay = document.querySelector('section .indicators .number');
 
+
 let active = 0;
 let lastPosition = items.length - 1;
 
@@ -11,6 +12,8 @@ function updateCarousel() {
   items.forEach((item, index) => {
     item.classList.toggle('active', index === active);
   });
+
+  
 
   dots.forEach((dot, index) => {
     dot.classList.toggle('active', index === active);
